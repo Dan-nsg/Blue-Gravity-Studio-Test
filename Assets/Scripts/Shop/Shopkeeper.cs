@@ -3,6 +3,7 @@ using UnityEngine;
 public class Shopkeeper : MonoBehaviour
 {
     public GameObject shopUI;
+    public GameObject playerInventoryUI;
     public GameObject interactionIcon;
     private bool playerInRange;
 
@@ -10,6 +11,7 @@ public class Shopkeeper : MonoBehaviour
     {
         interactionIcon.SetActive(false);
         shopUI.SetActive(false);
+        playerInventoryUI.SetActive(false);
     }
 
     void Update()
@@ -17,6 +19,7 @@ public class Shopkeeper : MonoBehaviour
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             shopUI.SetActive(!shopUI.activeSelf);
+            playerInventoryUI.SetActive(!playerInventoryUI.activeSelf);
         }
     }
 
@@ -36,6 +39,7 @@ public class Shopkeeper : MonoBehaviour
             playerInRange = false;
             interactionIcon.SetActive(false);
             shopUI.SetActive(false);
+            playerInventoryUI.SetActive(false);
         }
     }
 }
