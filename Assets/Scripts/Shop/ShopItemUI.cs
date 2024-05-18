@@ -8,18 +8,31 @@ public class ShopItemUI : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI priceText;
     public Button buyButton;
+    private ItemData itemData;
+    private PlayerInventory playerInventory;
 
-    public void Setup(ItemData itemData)
+    public void Setup(ItemData itemData, PlayerInventory playerInventory)
     {
+        this.itemData = itemData;
+        this.playerInventory = playerInventory;
         iconImage.sprite = itemData.icon;
         nameText.text = itemData.itemName;
         priceText.text = itemData.price.ToString();
-        buyButton.onClick.AddListener(() => BuyItem(itemData));
+        buyButton.onClick.AddListener(BuyItem);
     }
 
-    void BuyItem(ItemData itemData)
+    void BuyItem()
     {
-        // Adicione aqui a lógica para comprar o item
-        Debug.Log("Comprou: " + itemData.itemName);
+        if (playerInventory.CanAfford(itemData.price))
+        {
+            playerInventory.RemoveGold(itemData.price);
+            playerInventory.AddItem(itemData);
+            Debug.Log($"Bought: {itemData.itemName}");
+            Destroy(gameObject); // Remove o item da loja
+        }
+        else
+        {
+            Debug.Log("Not enough gold");
+        }
     }
 }

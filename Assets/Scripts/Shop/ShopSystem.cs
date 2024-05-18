@@ -6,6 +6,7 @@ public class ShopSystem : MonoBehaviour
     public List<ItemData> itemsForSale;
     public GameObject shopItemPrefab;
     public Transform shopItemContainer;
+    public PlayerInventory playerInventory;
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class ShopSystem : MonoBehaviour
         {
             GameObject shopItem = Instantiate(shopItemPrefab, shopItemContainer);
             ShopItemUI shopItemUI = shopItem.GetComponent<ShopItemUI>();
-            shopItemUI.Setup(item);
+            shopItemUI.Setup(item, playerInventory);
         }
     }
 }
