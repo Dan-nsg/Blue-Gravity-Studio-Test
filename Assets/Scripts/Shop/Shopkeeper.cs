@@ -5,7 +5,10 @@ public class Shopkeeper : MonoBehaviour
     public GameObject shopUI;
     public GameObject playerInventoryUI;
     public GameObject interactionIcon;
-    private bool playerInRange;
+
+    public int gold = 0;
+
+    private bool _playerInRange;
 
     void Start()
     {
@@ -16,7 +19,7 @@ public class Shopkeeper : MonoBehaviour
 
     void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        if (_playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             shopUI.SetActive(!shopUI.activeSelf);
             playerInventoryUI.SetActive(!playerInventoryUI.activeSelf);
@@ -27,7 +30,7 @@ public class Shopkeeper : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerInRange = true;
+            _playerInRange = true;
             interactionIcon.SetActive(true);
         }
     }
@@ -36,7 +39,7 @@ public class Shopkeeper : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerInRange = false;
+            _playerInRange = false;
             interactionIcon.SetActive(false);
             shopUI.SetActive(false);
             playerInventoryUI.SetActive(false);
