@@ -1609,7 +1609,7 @@ GameObject:
   - component: {fileID: 1720755601}
   - component: {fileID: 1720755602}
   m_Layer: 0
-  m_Name: Hair
+  m_Name: Hair/Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1697,6 +1697,7 @@ GameObject:
   - component: {fileID: 1843818763}
   - component: {fileID: 1843818764}
   - component: {fileID: 1843818762}
+  - component: {fileID: 1843818766}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1770,8 +1771,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1720755601}
-  - {fileID: 884173349}
   - {fileID: 1376046012}
+  - {fileID: 884173349}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1843818761
@@ -1910,6 +1911,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5506492, y: 1.0292838}
   m_EdgeRadius: 0
+--- !u!114 &1843818766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843818756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eac9d4c6f360734b9a6f0c36edb71cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterBody: {fileID: 11400000, guid: f2f9fcd8f6b605c43ad3da4982821ad4, type: 2}
+  bodyPartTypes:
+  - Body
+  - Hair
+  - Torso
+  - Legs
+  characterStates:
+  - idle
+  - walk
+  characterDirections:
+  - down
+  - right
+  - left
+  - up
 --- !u!1 &1968420285
 GameObject:
   m_ObjectHideFlags: 0

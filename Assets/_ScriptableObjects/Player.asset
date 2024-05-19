@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   characterBodyParts:
+  - bodyPartName: Body
+    bodyPart: {fileID: 11400000, guid: a2af44368d4e27744b40dc95cf522031, type: 2}
   - bodyPartName: Hair
     bodyPart: {fileID: 11400000, guid: 2f9d355ecc7dfb847bc354400aaaff84, type: 2}
   - bodyPartName: Clothes
