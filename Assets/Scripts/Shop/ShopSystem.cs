@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ShopSystem : MonoBehaviour
 {
-    public List<ItemData> itemsForSale;
+    public List<SO_ItemData> itemsForSale;
     public GameObject shopItemPrefab;
     public Transform shopItemContainer;
     public PlayerInventory playerInventory;
@@ -15,7 +15,7 @@ public class ShopSystem : MonoBehaviour
 
     void PopulateShop()
     {
-        foreach (ItemData item in itemsForSale)
+        foreach (SO_ItemData item in itemsForSale)
         {
             GameObject shopItem = Instantiate(shopItemPrefab, shopItemContainer);
             ShopItemUI shopItemUI = shopItem.GetComponent<ShopItemUI>();

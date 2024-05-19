@@ -8,10 +8,10 @@ public class ShopItemUI : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI priceText;
     public Button buyButton;
-    private ItemData itemData;
+    private SO_ItemData itemData;
     private PlayerInventory playerInventory;
 
-    public void Setup(ItemData itemData, PlayerInventory playerInventory)
+    public void Setup(SO_ItemData itemData, PlayerInventory playerInventory)
     {
         this.itemData = itemData;
         this.playerInventory = playerInventory;

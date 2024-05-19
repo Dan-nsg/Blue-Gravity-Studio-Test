@@ -4,16 +4,16 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public int gold = 100;
-    public List<ItemData> inventory = new List<ItemData>();
+    public List<SO_ItemData> inventory = new List<SO_ItemData>();
 
-    public void AddItem(ItemData item)
+    public void AddItem(SO_ItemData item)
     {
         inventory.Add(item);
         Debug.Log($"Item added: {item.itemName}");
         // Atualize a UI do inventário se necessário
     }
 
-    public void RemoveItem(ItemData item)
+    public void RemoveItem(SO_ItemData item)
     {
         inventory.Remove(item);
         Debug.Log($"Item removed: {item.itemName}");
